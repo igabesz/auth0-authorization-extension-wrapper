@@ -1,0 +1,9 @@
+node_modules/
+lib/
+test/*.js
+*.js.map
+*.log
+*.tgz
+*.log
+*.bat
+*.sh

@@ -1,0 +1,50 @@
+{
+  "name": "auth0-authorization-extension-wrapper",
+  "version": "0.0.1",
+  "description": "Helper lib for Auth0 Authorization Extension with type support, using promises",
+  "main": "lib/index.js",
+  "keywords": [
+    "auth0",
+    "authorization",
+    "authorization-extension",
+    "api",
+    "typescript"
+  ],
+  "directories": {
+    "test": "tests"
+  },
+  "typings": "lib/index.d.ts",
+  "typescript": {
+    "definition": "lib/index.d.ts"
+  },
+  "dependencies": {
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.37",
+    "@types/request-promise": "^4.1.33",
+    "chai": "^3.5.0",
+    "config-decorators": "0.0.3"
+  },
+  "scripts": {
+    "build": "tsc -p src",
+    "build:test": "tsc -p test",
+    "test": "mocha test --timeout 15000",
+    "clear": "rm -Rf lib && rm -Rf test/*.js"
+  },
+  "author": {
+    "name": "Gábor IMRE",
+    "email": "imre.gabesz@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igabesz/advanced-controllers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/igabesz/advanced-controllers/issues"
+  },
+  "homepage": "https://github.com/igabesz/advanced-controllers#readme"
+}
