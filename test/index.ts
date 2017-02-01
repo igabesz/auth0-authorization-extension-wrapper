@@ -2,3 +2,4 @@
 import './init';
 import './permission-check';
 import './role-check';
+import './user-check';

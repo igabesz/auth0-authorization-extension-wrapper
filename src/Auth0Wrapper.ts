@@ -78,12 +78,18 @@ export class Auth0Wrapper {
 		return response;
 	}
 
-	private async delete<T>(url: string): Promise<T> {
+	private async patch<T>(url: string, body: any): Promise<T> {
+		let options = this.createOptions(body);
+		let response = await request.patch(this.apiUrl + url, options);
+		return response;
+	}
+
+	private async delete<T>(url: string, body?: any): Promise<T> {
 		// console.log('DELETE ' + url);
-		let response = await request.delete(this.apiUrl + url, this.createOptions());
+		let response = await request.delete(this.apiUrl + url, this.createOptions(body));
 		// console.log('RESPONSE', response);
 		return response;
-}
+	}
 
 	// PERMISSIONS
 
@@ -152,6 +158,22 @@ export class Auth0Wrapper {
 
 	async deleteRole(id: string) {
 		return this.delete<void>('/roles/' + id);
+	}
+
+	// USERS
+
+	async getUserRoles(id: string) {
+		return this.get<ShortRole[]>(`/users/${id}/roles`);
+	}
+
+	async addRoleForUser(id: string, roles: string | string[]) {
+		if (typeof roles === 'string') roles = [roles];
+		return this.patch(`/users/${id}/roles`, roles);
+	}
+
+	async removeRoleFromUser(id: string, roles: string | string[]) {
+		if (typeof roles === 'string') roles = [roles];
+		return this.delete(`/users/${id}/roles`, roles);
 	}
 
 }

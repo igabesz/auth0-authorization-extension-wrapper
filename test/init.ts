@@ -20,6 +20,9 @@ export class Auth0Settings {
 
 	@ENV('AUTH0_API_URL', true)
 	auth0AuthExtensionUrl: string;
+
+	@ENV('AUTH0_TEST_USER_ID', true)
+	auth0TestUserId: string;
 }
 
 
