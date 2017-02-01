@@ -23,6 +23,7 @@ export class Auth0Wrapper {
 	private apiUrl: string;
 
 	get isAuthenticated() { return !!this.token; }
+	getToken() { return this.token; }
 
 	private createOptions(body?: any): {
 		headers: { [name: string]: string; };
