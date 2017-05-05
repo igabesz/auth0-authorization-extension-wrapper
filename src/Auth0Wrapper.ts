@@ -56,36 +56,29 @@ export class Auth0Wrapper {
 	// PRIVATE HELPERS
 
 	private async get<T>(url: string): Promise<T> {
-		// console.log('GET ' + url);
 		let response = await request.get(this.apiUrl + url, this.createOptions());
 		// console.log('RESPONSE', response);
 		return response;
 	}
 
 	private async post<T>(url: string, body: any): Promise<T> {
-		// console.log('POST ' + url, body);
-		let options = this.createOptions(body);
-		let response = await request.post(this.apiUrl + url, options);
+		let response = await request.post(this.apiUrl + url, this.createOptions(body));
 		// console.log('RESPONSE', response);
 		return response;
 	}
 
 	private async put<T>(url: string, body: any): Promise<T> {
-		// console.log('PUT ' + url, body);
-		let options = this.createOptions(body);
-		let response = await request.put(this.apiUrl + url, options);
+		let response = await request.put(this.apiUrl + url, this.createOptions(body));
 		// console.log('RESPONSE', response);
 		return response;
 	}
 
 	private async patch<T>(url: string, body: any): Promise<T> {
-		let options = this.createOptions(body);
-		let response = await request.patch(this.apiUrl + url, options);
+		let response = await request.patch(this.apiUrl + url, this.createOptions(body));
 		return response;
 	}
 
 	private async delete<T>(url: string, body?: any): Promise<T> {
-		// console.log('DELETE ' + url);
 		let response = await request.delete(this.apiUrl + url, this.createOptions(body));
 		// console.log('RESPONSE', response);
 		return response;
