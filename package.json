@@ -1,6 +1,6 @@
 {
   "name": "auth0-authorization-extension-wrapper",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Helper lib for Auth0 Authorization Extension with type support, using promises",
   "main": "lib/index.js",
   "keywords": [
