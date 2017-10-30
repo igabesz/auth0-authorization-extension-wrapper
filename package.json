@@ -41,10 +41,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/igabesz/advanced-controllers.git"
+    "url": "git+https://github.com/igabesz/auth0-authorization-extension-wrapper.git"
   },
   "bugs": {
-    "url": "https://github.com/igabesz/advanced-controllers/issues"
+    "url": "https://github.com/igabesz/auth0-authorization-extension-wrapper/issues"
   },
-  "homepage": "https://github.com/igabesz/advanced-controllers#readme"
+  "homepage": "https://github.com/igabesz/auth0-authorization-extension-wrapper#readme"
 }
