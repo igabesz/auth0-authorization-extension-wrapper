@@ -45,12 +45,12 @@ export class Auth0Wrapper {
 			audience: 'urn:auth0-authz-api',
 			grant_type: 'client_credentials'
 		};
-		await (request as any).post({
+		let result = await request.post({
 			uri: settings.auth0Url + '/oauth/token',
 			form: credentials,
 			json: true,
-		})
-		.then(res => this.token = res.access_token);
+		});
+		this.token = result.access_token;
 	}
 
 	// PRIVATE HELPERS
