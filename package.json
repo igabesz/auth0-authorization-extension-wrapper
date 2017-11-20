@@ -1,6 +1,6 @@
 {
   "name": "auth0-authorization-extension-wrapper",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "description": "Helper lib for Auth0 Authorization Extension with type support, using promises",
   "main": "lib/index.js",
   "keywords": [
@@ -18,15 +18,15 @@
     "definition": "lib/index.d.ts"
   },
   "dependencies": {
-    "request": "^2.79.0",
-    "request-promise": "^4.1.1"
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "@types/chai": "^3.4.34",
-    "@types/mocha": "^2.2.37",
-    "@types/request-promise": "^4.1.33",
-    "chai": "^3.5.0",
-    "config-decorators": "0.0.3"
+    "@types/chai": "^4.0.5",
+    "@types/mocha": "^2.2.44",
+    "@types/request-promise": "^4.1.39",
+    "chai": "^4.1.2",
+    "config-decorators": "^0.1.4"
   },
   "scripts": {
     "build": "tsc -p src",
