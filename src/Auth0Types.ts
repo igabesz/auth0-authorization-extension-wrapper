@@ -38,9 +38,13 @@ export interface PermissionsResponse {
 	total: number;
 }
 
-// export interface Group {
-// 	id: string;
-// 	name: string;
-// 	description: string;
-// 	applicationType: string;
-// }
+export interface Group {
+	_id?: string;
+	name: string;
+	description: string;
+}
+
+export interface GroupResponse {
+	groups: Group[];
+	total: number;
+}

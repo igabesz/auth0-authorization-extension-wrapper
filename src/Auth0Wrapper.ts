@@ -8,6 +8,8 @@ import {
 	Role,
 	ShortRole,
 	RoleResponse,
+	Group,
+	GroupResponse,
 } from './Auth0Types';
 
 
@@ -169,4 +171,44 @@ export class Auth0Wrapper {
 		return this.delete(`/users/${id}/roles`, roles);
 	}
 
+	async getUserGroups(id: string) {
+		return this.get<Group[]>(`/users/${id}/groups`);
+	}
+
+	async addGroupForUser(id: string, groups: string | string[]) {
+		if (typeof groups === 'string') groups = [groups];
+		return this.patch(`/users/${id}/groups`, groups);
+	}
+
+	async removeGroupFromUser(id: string, group: string) {
+		return this.delete(`/groups/${group}/members`, [id]);
+	}
+
+	// GROUPS
+
+	async getGroups(): Promise<Group[]> {
+		return (await this.get<GroupResponse>('/groups')).groups;
+	}
+
+	async getGroup(id: string): Promise<Group> {
+		return (await this.get<Group>('/groups/' + id));
+	}
+
+	async createGroup(group: Group): Promise<Group> {
+		return (await this.post<Group>('/groups', {
+			name: group.name,
+			description: group.description,
+		}));
+	}
+
+	async updateGroup(group: Group): Promise<Group> {
+		return (await this.put<Group>('/groups/' + group._id, {
+			name: group.name,
+			description: group.description,
+		}));
+	}
+
+	async deleteGroup(id: string) {
+		return this.delete<void>('/groups/' + id);
+	}
 }
